@@ -1,0 +1,65 @@
+/* 1. The Container (The Window) */
+.img-container {
+    width: 100%;
+    height: 250px;      /* Fixed height for all bike images */
+    overflow: hidden;   /* This is CRITICAL for the zoom to stay inside */
+    border-radius: 10px 10px 0 0; /* Rounds top corners only */
+}
+
+/* 2. The Image (Normal State) */
+.post-card img {
+    width: 100%;
+    height: 100%;
+    object-探索 cover;   /* Ensures image fits perfectly without stretching */
+    transition: transform 0.5s ease; /* Makes the zoom smooth (0.5 seconds) */
+    cursor: zoom-in;
+}
+
+/* 3. The Zoom Effect (Hover State) */
+.post-card img:hover {
+    transform: scale(1.3); /* Increases size by 30% */
+}/* Container for the image and button */
+.img-container {
+    position: relative; /* Needed to position the button inside */
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* The Zoom Button style */
+.zoom-btn-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.zoom-btn-icon:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Class to trigger when button is clicked */
+.is-zoomed {
+    transform: scale(1.5);
+}
